@@ -44,53 +44,31 @@ def mondai():
     #リストの中をシャッフルして正解のボタンの位置を変える
     shuffle(sentaku)
     st.session_state.sentakushi = sentaku
+    
+def monbutset(num,page):
+    st.session_state.cnt = 0
+    st.session_state.mon = 1
+    mondai()
+    st.session_state.henkan = num
+    st.session_state.page = page
+    st.rerun()
         
 #ホーム画面
 if st.session_state.page == 'home':
     st.title('基数変換問題')
     #問題ボタン
     if st.button('10➡2'):
-        st.session_state.cnt = 0
-        st.session_state.mon = 1
-        mondai()
-        st.session_state.henkan = 2
-        st.session_state.page = 'p1'
-        st.rerun()
+        monbutset(2,'p1')
     if st.button('10➡8'):
-        st.session_state.cnt = 0
-        st.session_state.mon = 1
-        mondai()
-        st.session_state.henkan = 8
-        st.session_state.page = 'p1'
-        st.rerun()
+        monbutset(8,'p1')
     if st.button('10➡16'):
-        st.session_state.cnt = 0
-        st.session_state.mon = 1
-        mondai()
-        st.session_state.henkan = 16
-        st.session_state.page = 'p1'
-        st.rerun()
+        monbutset(16,'p1')
     if st.button('2➡10'):
-        st.session_state.cnt = 0
-        st.session_state.mon = 1
-        mondai()
-        st.session_state.henkan = 2
-        st.session_state.page = 'p2'
-        st.rerun()
+        monbutset(2,'p2')
     if st.button('8➡10'):
-        st.session_state.cnt = 0
-        st.session_state.mon = 1
-        mondai()
-        st.session_state.henkan = 8
-        st.session_state.page = 'p2'
-        st.rerun()
+        monbutset(8,'p2')
     if st.button('16➡10'):
-        st.session_state.cnt = 0
-        st.session_state.mon = 1
-        mondai()
-        st.session_state.henkan = 16
-        st.session_state.page = 'p2'
-        st.rerun()
+        monbutset(16,'p2')
         
 #10→nの問題ページ
 elif st.session_state.page == 'p1':
