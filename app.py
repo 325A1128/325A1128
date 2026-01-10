@@ -103,7 +103,7 @@ elif st.session_state.page == 'p1_ans':
     st.title(st.session_state.seigo)
     st.write(f'10進数:{st.session_state.juu}')
     st.write('↓')
-    st.write(f'{st.session_state.henkan}進数:{henkan(st.session_state.juu,2)}')
+    st.write(f'{st.session_state.henkan}進数:{henkan(st.session_state.juu,st.session_state.henkan)}')
     if st.session_state.seigo == '〇正解':
         st.image('hand_good.png')
     else:
