@@ -104,6 +104,10 @@ elif st.session_state.page == 'p1_ans':
     st.write(f'10進数:{st.session_state.juu}')
     st.write('↓')
     st.write(f'{st.session_state.henkan}進数:{henkan(st.session_state.juu,2)}')
+    if st.session_state.seigo == '〇正解':
+        st.image('hand_good.png')
+    else:
+        st.image('figure_zasetsu.png')
     #三問目なら結果ページに飛ばす
     if st.session_state.mon < 3:
         if st.button('次の問題へ'):
@@ -121,6 +125,10 @@ elif st.session_state.page == 'p2_ans':
     st.write(f'{st.session_state.henkan}進数:{henkan(st.session_state.juu,st.session_state.henkan)}')
     st.write('↓')
     st.write(f'10進数:{st.session_state.juu}')
+    if st.session_state.seigo == '〇正解':
+        st.image('hand_good.png')
+    else:
+        st.image('figure_zasetsu.png')
     if st.session_state.mon < 3:
         if st.button('次の問題へ'):
             st.session_state.mon += 1
