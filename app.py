@@ -45,6 +45,7 @@ def mondai():
     shuffle(sentaku)
     st.session_state.sentakushi = sentaku
     
+# ホーム画面から問題ページまでの設定
 def monbutset(num,page):
     st.session_state.cnt = 0
     st.session_state.mon = 1
